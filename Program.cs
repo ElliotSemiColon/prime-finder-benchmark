@@ -52,22 +52,32 @@ namespace optimised_primes
             }
             stopwatch.Stop();
             Console.WriteLine($"found {primes.Count} primes {count} times in {stopwatch.ElapsedMilliseconds}ms\napprox. {stopwatch.ElapsedMilliseconds / count}ms per test");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"scored {count}pts");
+            Console.ForegroundColor = ConsoleColor.White;
             //OutputList(Sieve(limit));
             return primes;
         }
 
         static void Main(string[] args)
         {
-            Stopwatch stopwatch = new Stopwatch();
-            Console.WriteLine("prime number finding cpu/ram benchmark\nenter the number to find primes up to \n> choose around 1000000 for good accuracy on modern hardware\n> choose less if youre comparing against older hardware)");
-            int limit = 0;
-            try { limit = Int32.Parse(Console.ReadLine()); } catch (FormatException e) { Console.WriteLine(e); }
-            Console.WriteLine($"benchmarking with search limit {limit} (allow 5 seconds)");
+            Console.WriteLine("prime number finding cpu/ram benchmark");
+            int limit = 1000000;
+            try 
+            { 
+                Console.WriteLine($"benchmarking with search limit {limit} (allow 5 seconds)");
 
-            List<int> primes = Benchmark(limit);
-            Console.WriteLine($"output the {primes.Count} primes in these searches? (y/n)");
-            string response = Console.ReadLine().ToLower();
-            if (response == "y") { OutputList(primes); }
+                List<int> primes = Benchmark(limit);
+                Console.WriteLine($"output the {primes.Count} primes in these searches? (y/n)");
+                string response = Console.ReadLine().ToLower();
+                if (response == "y") { OutputList(primes); }
+            } 
+            catch (FormatException e) 
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("could not benchmark");
+                Console.WriteLine(e);
+            }
 
             Console.ReadLine();
         }
