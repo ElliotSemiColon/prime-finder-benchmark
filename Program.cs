@@ -53,7 +53,7 @@ namespace optimised_primes
             stopwatch.Stop();
             Console.WriteLine($"found {primes.Count} primes {count} times in {stopwatch.ElapsedMilliseconds}ms\napprox. {stopwatch.ElapsedMilliseconds / count}ms per test");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"scored {count}pts");
+            Console.WriteLine($"scored {Math.Round((decimal)count/stopwatch.ElapsedMilliseconds*5000)}pts");
             Console.ForegroundColor = ConsoleColor.White;
             //OutputList(Sieve(limit));
             return primes;
