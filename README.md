@@ -4,7 +4,7 @@ it's run as many times as possible in ~5 seconds to test ***per-thread*** perfor
 to try this program out, download the repo and run the executable inside its folder **(only run executables from people you trust)**
 
 ## making sense of the result
-the higher the number of *iterations*, the faster your cpu and ram\
+the higher the number of *iterations*, the faster your ***per-thread*** performance\
 iterations are reflected by score in points (points are adjusted for the time it took to run the benchmark)
 
 ## performance table
