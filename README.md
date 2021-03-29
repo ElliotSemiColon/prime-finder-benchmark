@@ -8,7 +8,7 @@ the higher the number of *iterations*, the faster your cpu and ram\
 iterations are reflected by score in points (points are adjusted for the time it took to run the benchmark)
 
 ## performance table
-some results i've seen to give context\
+some results i've seen to give context
 | processor  | # threads | score (points) |
 | ------------- | ------------- | ------------- |
 | i5-6600 | 4 | 423 |
