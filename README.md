@@ -14,4 +14,5 @@ some results i've seen to give context
 | ryzen 9 3900x (compiled for linux) | 24 | 2016 |
 | i7-1065G7 | 8 | 789 |
 | ryzen 9 3900x | 24 | 767 |
+|||693|
 | i5-6600 | 4 | 423 |
