@@ -5,4 +5,4 @@ to try this program out, download the repo and run the executable inside its fol
 
 # making sense of the result
 the higher the number of *iterations*, the faster your cpu and ram\
-iterations are reflected by score in points (points are adjusted for runtime variations)
+iterations are reflected by score in points (points are adjusted for the time it took to run the benchmark)
