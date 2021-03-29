@@ -1,4 +1,4 @@
-# benchmark by finding primes
+# benchmark by finding primes (requires netcore 3.1)
 this is an implementation of the Sieve of Eratosthenes\
 it's run as many times as possible in ~5 seconds to test ***per-thread*** performance\
 to try this program out, download the repo and run the executable inside its folder **(only run executables from people you trust)**
