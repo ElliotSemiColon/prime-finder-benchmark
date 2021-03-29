@@ -37,7 +37,7 @@ namespace optimised_primes
             return primes;
         }
 
-        static List<int> Benchmark(int limit)
+        static List<int> Benchmark(int limit, int duration)
         {
             Stopwatch stopwatch = new Stopwatch();
 
@@ -45,12 +45,14 @@ namespace optimised_primes
             List<int> primes = new List<int>();
 
             stopwatch.Start();
-            while (stopwatch.ElapsedMilliseconds < 5000)
+            while (stopwatch.ElapsedMilliseconds < duration*1000)
             {
                 primes = InvertedSieve(limit);
                 count++;
             }
             stopwatch.Stop();
+
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine($"found {primes.Count} primes {count} times in {stopwatch.ElapsedMilliseconds}ms\napprox. {stopwatch.ElapsedMilliseconds / count}ms per test");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"scored {Math.Round((decimal)count/stopwatch.ElapsedMilliseconds*5000)}pts");
@@ -61,13 +63,36 @@ namespace optimised_primes
 
         static void Main(string[] args)
         {
-            Console.WriteLine("prime number finding cpu/ram benchmark");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("prime number finding single-threaded performance benchmark");
             int limit = 1000000;
             try 
-            { 
-                Console.WriteLine($"benchmarking with search limit {limit} (allow 5 seconds)");
+            {
+                int duration = 0;
+                List<int> primes = new List<int>();
+                bool firstTime = true;
 
-                List<int> primes = Benchmark(limit);
+                Console.ForegroundColor = ConsoleColor.White;
+
+                while (duration <= 0) 
+                {
+                    if (firstTime) { Console.WriteLine("enter a duration over which you want to test (a whole number of seconds, recommended 5s or over)"); }
+                    duration = Int32.Parse(Console.ReadLine());
+                    if (duration <= 0) { Console.WriteLine("duration must be at least 1s"); }
+                    firstTime = false;
+                }
+
+                Console.WriteLine($"benchmarking with search limit {limit} (allow {duration}s for the test to complete)");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine();
+
+                primes = Benchmark(limit, duration);
+
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("if your scores are inconsistent, run the benchmark again with a longer duration");
+
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine($"output the {primes.Count} primes in these searches? (y/n)");
                 string response = Console.ReadLine().ToLower();
                 if (response == "y") { OutputList(primes); }
@@ -79,6 +104,8 @@ namespace optimised_primes
                 Console.WriteLine(e);
             }
 
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("press enter to exit");
             Console.ReadLine();
         }
     }
