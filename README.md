@@ -11,7 +11,7 @@ iterations are reflected by score in points (points are adjusted for the time it
 some results i've seen to give context
 | processor  | # threads | score (points) |
 | ------------- | ------------- | ------------- |
-| i7-1065G7 | 8 | 789 |
+| i7-1065G7 | 8 | 820 |
 | ryzen 9 3900x | 24 | 767 |
 | i5-9600K | 6 | 693 |
 | i5-6600 | 4 | 423 |
