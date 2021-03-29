@@ -9,9 +9,9 @@ iterations are reflected by score in points (points are adjusted for the time it
 
 ## performance table
 some results i've seen to give context
-| processor  | OS type | # threads | score (points) |
-| ------------- | ------------- | ------------- | ------------- |
-| i7-1065G7 | windows | 8 | 789 |
-| ryzen 9 3900x | windows | 24 | 767 |
-| i5-9600K | windows | 6 | 693 |
-| i5-6600 | windows | 4 | 423 |
+| processor  | # threads | score (points) |
+| ------------- | ------------- | ------------- |
+| i7-1065G7 | 8 | 789 |
+| ryzen 9 3900x | 24 | 767 |
+| i5-9600K | 6 | 693 |
+| i5-6600 | 4 | 423 |
