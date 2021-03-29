@@ -7,7 +7,8 @@ to try this program out, download the repo and run the executable inside its fol
 the higher the number of *iterations*, the faster your cpu and ram\
 iterations are reflected by score in points (points are adjusted for the time it took to run the benchmark)
 
-## for context
+## performance table
+some results i've seen to give context\
 | processor  | # threads | score (points) |
 | ------------- | ------------- | ------------- |
 | i5-6600 | 4 | 423 |
